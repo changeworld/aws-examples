@@ -21,3 +21,10 @@ module "network" {
   azs             = "${var.azs}"
   public_subnets  = "${var.public_subnets}"
 }
+
+module "compute" {
+  source = "../../../modules/aws/compute"
+
+  name               = "${var.name}"
+  vpc_id             = "${module.network.vpc_id}"
+}
