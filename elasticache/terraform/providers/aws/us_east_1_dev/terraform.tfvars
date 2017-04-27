@@ -21,6 +21,8 @@ region  = "us-east-1"
 #--------------------------------------------------------------
 
 vpc_cidr        = "192.168.0.0/16"
+azs             = "us-east-1a,us-east-1c" # AZs are region specific
+public_subnets  = "192.168.11.0/24,192.168.12.0/24" # Creating one public subnet per AZ
 
 #--------------------------------------------------------------
 # Data
