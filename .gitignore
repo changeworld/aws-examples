@@ -31,4 +31,5 @@ Temporary Items
 # End of https://www.gitignore.io/api/macos
 
 # Terraform(manual operation)
+*.terraform
 *.tfstate*
