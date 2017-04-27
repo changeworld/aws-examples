@@ -32,4 +32,3 @@ Temporary Items
 
 # Terraform(manual operation)
 *.tfstate*
-*.tfvars
