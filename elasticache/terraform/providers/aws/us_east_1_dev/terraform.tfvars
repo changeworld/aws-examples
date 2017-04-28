@@ -31,3 +31,8 @@ public_subnets  = "192.168.11.0/24,192.168.12.0/24" # Creating one public subnet
 #--------------------------------------------------------------
 # Compute
 #--------------------------------------------------------------
+
+elasticache_cluster_count   = "2"
+elasticache_instance_type   = "cache.t2.micro"
+elasticache_engine_version  = "3.2.4"
+elasticache_parameter_group = "default.redis3.2.cluster.on"
