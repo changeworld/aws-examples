@@ -2,8 +2,9 @@
 # This module creates all resources necessary for ElastiCache
 #--------------------------------------------------------------
 
-variable "name"     { default = "elasticache" }
-variable "vpc_id"   { }
+variable "name"         { default = "elasticache" }
+variable "vpc_id"       { }
+variable "subnet_ids"   { }
 
 resource "aws_security_group" "elasticache" {
   name        = "${var.name}"
@@ -43,4 +44,10 @@ resource "aws_security_group" "elasticache" {
     to_port     = 0
     cidr_blocks = ["0.0.0.0/0"]
   }
+}
+
+resource "aws_elasticache_subnet_group" "elasticache" {
+  name        = "${var.name}"
+  description = "ElastiCache subnet group"
+  subnet_ids  = ["${split(",", var.subnet_ids)}"]
 }
